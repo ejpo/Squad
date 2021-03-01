@@ -8,7 +8,7 @@ LABEL maintainer="walentinlamonos@gmail.com"
 ENV STEAMAPPID 403240
 ENV STEAMAPP squad
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
-ENV DLURL https://raw.githubusercontent.com/CM2Walki/Squad
+ENV DLURL https://raw.githubusercontent.com/ejpo/Squad
 
 RUN set -x \
 	&& apt-get update \
