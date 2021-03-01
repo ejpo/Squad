@@ -3,7 +3,7 @@
 ############################################################
 FROM cm2network/steamcmd:root
 
-LABEL maintainer="walentinlamonos@gmail.com"
+LABEL maintainer="ejpo"
 
 ENV STEAMAPPID 403240
 ENV STEAMAPP squad
