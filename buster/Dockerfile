@@ -15,6 +15,7 @@ RUN set -x \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
 		wget=1.20.1-1.1 \
 		git=1:2.20.1-2+deb10u3 \
+		python3=3.7.3-1 \
 	&& wget "${DLURL}/etc/entry.sh" -O "${HOMEDIR}/entry.sh" \
 	&& mkdir -p "${STEAMAPPDIR}" \
 	&& chmod 755 "${HOMEDIR}/entry.sh" "${STEAMAPPDIR}" \
