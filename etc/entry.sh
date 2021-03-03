@@ -6,7 +6,7 @@ bash "${STEAMCMDDIR}/steamcmd.sh" +login anonymous \
 
 bash rm -rf ${STEAMAPPDIR}/SquadGame/ServerConfig/*
 
-python3 etc/downloadconfig.py
+python3 downloadconfig.py
 
 unzip "${CONTAINER_NAME}.zip"
 
