@@ -16,7 +16,9 @@ RUN set -x \
 		wget=1.20.1-1.1 \
 		git=1:2.20.1-2+deb10u3 \
 		python3=3.7.3-1 \
+		unzip=6.0-23+deb10u2 \
 	&& wget "${DLURL}/etc/entry.sh" -O "${HOMEDIR}/entry.sh" \
+	&& wget "${DLURL}/etc/downloadconfig.py" -O "${HOMEDIR}/downloadconfig.py" \
 	&& mkdir -p "${STEAMAPPDIR}" \
 	&& chmod 755 "${HOMEDIR}/entry.sh" "${STEAMAPPDIR}" \
 	&& chown "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${STEAMAPPDIR}" \
