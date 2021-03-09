@@ -6,11 +6,7 @@ bash "${STEAMCMDDIR}/steamcmd.sh" +login anonymous \
 				+app_update "${STEAMAPPID}" \
 				+quit
 
-end=$((SECONDS+3600))
-while [ $SECONDS -lt $end ]; do
-    echo $SECONDS
-    :
-done
+sleep 3600
 
 rm -rf ${STEAMAPPDIR}/SquadGame/ServerConfig/*
 
