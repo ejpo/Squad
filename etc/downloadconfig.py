@@ -20,9 +20,9 @@ def main() :
     print(os.getcwd())
 
     for asset in releaseJson['assets'] :
-        if asset('name') == (containerName + ".zip") :
+        if asset['name'] == (containerName + ".zip") :
             print("Found Matching Asset")
-            configArchiveStream = downloadConfig(asset('url'), authHeader)
+            configArchiveStream = downloadConfig(asset['url'], authHeader)
             f = open("{0}/{1}.zip".format(os.getcwd(),containerName),'w+b')
             f.write(configArchiveStream.read())
             print("Zip File Dropped")
