@@ -6,7 +6,7 @@ import json
 baseURI = "https://api.github.com"
 ghUser = os.environ.get['GITHUB_USER']
 ghRepo = os.environ.get['GITHUB_REPO']
-containerName = "squad-prod-01"
+containerName = os.environ.get['CONFIG_NAME']
 authHeaderBytes = base64.b64encode((ghUser + ":" + os.environ.get['GITHUB_AUTH']).encode('ascii'))
 authHeader = authHeaderBytes.decode('ascii')
 
