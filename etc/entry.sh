@@ -6,8 +6,6 @@ bash "${STEAMCMDDIR}/steamcmd.sh" +login anonymous \
 				+app_update "${STEAMAPPID}" \
 				+quit
 
-sleep 3600
-
 rm -rf ${STEAMAPPDIR}/SquadGame/ServerConfig/*
 
 python3 downloadconfig.py
@@ -19,7 +17,7 @@ mv ${STEAMAPPDIR}/${CONFIG_NAME}/* ${STEAMAPPDIR}/SquadGame/ServerConfig/.
 # Change rcon port on first launch, because the default config overwrites the commandline parameter (you can comment this out if it has done it's purpose)
 sed -i -e 's/Port=21114/'"Port=${RCONPORT}"'/g' "${STEAMAPPDIR}/SquadGame/ServerConfig/Rcon.cfg"
 
-
+sleep 3600
 
 #bash "${STEAMAPPDIR}/SquadGameServer.sh" \
 #			Port="${PORT}" \
