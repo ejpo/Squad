@@ -12,7 +12,7 @@ python3 downloadconfig.py
 
 unzip "${CONTAINER_NAME}.zip"
 
-mv ${CONTAINER_NAME}/* ${STEAMAPPDIR}/SquadGame/ServerConfig/.
+mv ${STEAMAPPDIR}/${CONTAINER_NAME}/* ${STEAMAPPDIR}/SquadGame/ServerConfig/.
 
 # Change rcon port on first launch, because the default config overwrites the commandline parameter (you can comment this out if it has done it's purpose)
 sed -i -e 's/Port=21114/'"Port=${RCONPORT}"'/g' "${STEAMAPPDIR}/SquadGame/ServerConfig/Rcon.cfg"
