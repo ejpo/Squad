@@ -4,10 +4,10 @@ import base64
 import json
 
 baseURI = "https://api.github.com"
-ghUser = os.environ.get['GITHUB_USER']
-ghRepo = os.environ.get['GITHUB_REPO']
-containerName = os.environ.get['CONFIG_NAME']
-authHeaderBytes = base64.b64encode((ghUser + ":" + os.environ.get['GITHUB_AUTH']).encode('ascii'))
+ghUser = os.environ.get('GITHUB_USER')
+ghRepo = os.environ.get('GITHUB_REPO')
+containerName = os.environ.get('CONFIG_NAME')
+authHeaderBytes = base64.b64encode((ghUser + ":" + os.environ.get('GITHUB_AUTH')).encode('ascii'))
 authHeader = authHeaderBytes.decode('ascii')
 
 def main() :
@@ -20,9 +20,9 @@ def main() :
     print(os.getcwd())
 
     for asset in releaseJson['assets'] :
-        if asset['name'] == (containerName + ".zip") :
+        if asset('name') == (containerName + ".zip") :
             print("Found Matching Asset")
-            configArchiveStream = downloadConfig(asset['url'], authHeader)
+            configArchiveStream = downloadConfig(asset('url'), authHeader)
             f = open("{0}/{1}.zip".format(os.getcwd(),containerName),'w+b')
             f.write(configArchiveStream.read())
             print("Zip File Dropped")
